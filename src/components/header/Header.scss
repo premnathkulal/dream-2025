@@ -1,0 +1,45 @@
+@use "../../styles/variables" as var;
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background: var.$secondary-color;
+  color: var.$primary-color;
+
+  .auth-logo {
+    cursor: pointer;
+    .dropdown {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      right: 10px;
+      background: var.$white;
+      padding: 0.8rem;
+      box-shadow: var.$card-shadow;
+      border-radius: 2px;
+      font-weight: 600;
+      font-size: 1.2rem;
+
+      .dropdown-item {
+        padding: 0 0.5rem;
+      }
+    }
+  }
+
+  .brand-logo-img {
+    width: 2rem;
+    cursor: pointer;
+  }
+
+  .auth-logo-icon {
+    font-size: 1.5rem;
+  }
+
+  .brand-name {
+    font-size: 1.2rem;
+    font-weight: 800;
+  }
+}
