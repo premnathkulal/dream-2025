@@ -18,11 +18,11 @@ export default tseslint.config({
   languageOptions: {
     // other options...
     parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      project: ["./tsconfig.node.json", "./tsconfig.app.json"],
       tsconfigRootDir: import.meta.dirname,
     },
   },
-})
+});
 ```
 
 - Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
@@ -31,11 +31,11 @@ export default tseslint.config({
 
 ```js
 // eslint.config.js
-import react from 'eslint-plugin-react'
+import react from "eslint-plugin-react";
 
 export default tseslint.config({
   // Set the react version
-  settings: { react: { version: '18.3' } },
+  settings: { react: { version: "18.3" } },
   plugins: {
     // Add the react plugin
     react,
@@ -44,7 +44,98 @@ export default tseslint.config({
     // other rules...
     // Enable its recommended rules
     ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
+    ...react.configs["jsx-runtime"].rules,
   },
-})
+});
 ```
+
+## Menu
+
+- Purchase
+  - Goods Receipt entry
+  - Purchase Invoice View
+  - Goods Shortage returns
+- Stock
+  - Stock Adjustment
+  - Stock Browser
+  - Stock Transfer Browser
+  - Stock Transfer Entry
+- Sales
+  - Bill Entry
+  - Bill Update/Print
+  - Invoice
+  - Bill generate
+  - Salesman order generate
+- Sales return
+  - Sales return entry
+  - Sales return update
+  - Damage return
+- Finance
+  - Collection shopwise
+  - Collection browser header
+  - Bulk collection
+  - Customer Account ledger
+  - Debit note entry
+  - View debit note
+  - Credit note entry
+  - Credit note update
+  - Supplier account statement
+  - Customer account statement
+- Master
+  - Create customer
+  - View/update customer
+  - Staff attendance entry
+  - Staff view/update
+  - Beat create
+  - Beat update
+  - Bank create
+  - Customer realignment
+  - Price master
+- Schemes
+  - Create scheme
+  - View scheme
+  - Combi create scheme
+- Reports
+  - Sales report
+    - Billed customer
+    - Customer Prodwise quantity
+    - Productivity report
+    - Dealer list
+    - Customer outstanding
+    - Sales return
+    - Eco report
+    - Depository list
+  - Purchase
+    - Purchase register
+    - Special disc report
+    - CSR report
+  - General report
+    - Unbilled customer
+    - Daily sales report
+    - Cheque collection report
+    - Price master report
+    - Daily collection report
+  - Stock
+    - Stock register
+    - Sales details
+    - Load sheet report
+    - Manual credit note
+    - Mobile sales order summary report
+    - Damage stock report
+    - Unload sheet
+    - Retailer payout
+    - Stock ageing report
+    - New stock register
+  - GST/TDS
+    - GST Tax Summary
+    - GST Setup
+    - GST Report
+    - GST sales summary
+    - GST purchase summary
+    - TDS Report
+    - TCS report
+- My Profile
+- Damage Claim
+  - Damage Claim create
+  - Damage Claim List and Change
+  - Claim detail report
