@@ -1,6 +1,7 @@
 import "./MasterMenu.scss";
 import { MenuItem, Menu, MenuCategory } from "../../utils/master-menu";
 import { useState } from "react";
+import DrawerMenu from "./DrawerMenu";
 
 const MasterMenu = () => {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
@@ -11,29 +12,9 @@ const MasterMenu = () => {
 
   return (
     <div className="master-menu">
-      {/* Drawer Menu for Mobile */}
-      {/* <button
-        className="menu-toggle"
-        onClick={() => setDrawerOpen(!isDrawerOpen)}
-      >
-        {isDrawerOpen ? "Close Menu" : "Open Menu"}
-      </button>
-      <div className={`drawer-menu ${isDrawerOpen ? "open" : ""}`}>
-        {Menu.map((category: MenuCategory) => (
-          <div key={category.id} className="menu-category">
-            <h3>{category.category}</h3>
-            <ul>
-              {category.items.map((item: MenuItem) => (
-                <li key={item.id} onClick={() => handleItemClick(item)}>
-                  {item.name}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div> */}
-
-      {/* Horizontal Menu for Desktop */}
+      <div className="drawer-menu-container">
+        {isDrawerOpen && <DrawerMenu />}
+      </div>
       <div className="horizontal-menu desktop">
         {Menu.map((category: MenuCategory) => (
           <div key={category.id} className="menu-category">

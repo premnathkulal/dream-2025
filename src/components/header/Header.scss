@@ -3,10 +3,16 @@
 .header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  // justify-content: space-between;
   padding: 1rem;
   background: var.$primary-color;
   color: var.$white;
+
+  .menu-icon {
+    padding-right: 1rem;
+    font-size: 1.2rem;
+    display: none;
+  }
 
   .auth-logo {
     cursor: pointer;
@@ -46,5 +52,12 @@
   .brand-name {
     font-size: 1.2rem;
     font-weight: 800;
+    flex: 1;
+  }
+}
+
+@media (max-width: 950px) {
+  .menu-icon {
+    display: block !important;
   }
 }

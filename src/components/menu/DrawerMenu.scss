@@ -1,0 +1,46 @@
+@use "../../styles/variables" as var;
+
+.drawer-menu {
+  position: fixed;
+  background: rgba(33, 29, 29, 0.374);
+  height: 100%;
+  width: 100%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1rem;
+  overflow-y: scroll;
+  padding-bottom: 20rem;
+
+  &-category {
+    text-align: left;
+
+    &-title {
+      font-size: 16px;
+      border-bottom: 1px solid var.$primary-color;
+      margin: 1rem 0;
+      padding: 0.2rem 0;
+      font-weight: 500;
+    }
+
+    ul {
+      font-size: 14px;
+      // padding-left: ;
+
+      .sub-category-title {
+        margin-top: 1rem;
+      }
+
+      .menu-title {
+        padding-bottom: 0.2rem;
+      }
+
+      .sub-category-menu-title {
+        font-size: 12px;
+        padding: 0.2rem 0;
+        padding-left: 1rem;
+      }
+    }
+  }
+}
