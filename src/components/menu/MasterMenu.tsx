@@ -2,9 +2,13 @@ import "./MasterMenu.scss";
 import { MenuItem, Menu, MenuCategory } from "../../utils/master-menu";
 import { useState } from "react";
 import DrawerMenu from "./DrawerMenu";
+import { useSelector } from "react-redux";
+import { RootState } from "../../store/app-store";
 
 const MasterMenu = () => {
-  const [isDrawerOpen, setDrawerOpen] = useState(false);
+  const isDrawerMenuOpen =
+    useSelector<RootState>((state) => state.uiControls.isDrawerMenuOpen) ??
+    false;
 
   const handleItemClick = (item: MenuItem) => {
     // TODO: Handle menu click
@@ -13,7 +17,7 @@ const MasterMenu = () => {
   return (
     <div className="master-menu">
       <div className="drawer-menu-container">
-        {isDrawerOpen && <DrawerMenu />}
+        {isDrawerMenuOpen && <DrawerMenu />}
       </div>
       <div className="horizontal-menu desktop">
         {Menu.map((category: MenuCategory) => (

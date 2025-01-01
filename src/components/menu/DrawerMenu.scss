@@ -12,6 +12,7 @@
   padding: 1rem;
   overflow-y: scroll;
   padding-bottom: 20rem;
+  animation: slide-in 0.3s forwards;
 
   &-category {
     text-align: left;
@@ -42,5 +43,14 @@
         padding-left: 1rem;
       }
     }
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
   }
 }
