@@ -110,6 +110,7 @@ enum MenuItems {
   DamageClaimCreate = "Damage Claim create",
   DamageClaimListAndChange = "Damage Claim List and Change",
   DamageClaimDetailReport = "Claim detail report",
+  CreateSupplier = "Create supplier",
 }
 
 const Menu = [
@@ -255,6 +256,7 @@ const Menu = [
     hasSubCategory: false,
     items: [
       { id: 26, name: MenuItems.CreateCustomer },
+      { id: 96, name: MenuItems.CreateSupplier },
       { id: 27, name: MenuItems.ViewUpdateCustomer },
       { id: 28, name: MenuItems.StaffAttendanceEntry },
       { id: 29, name: MenuItems.StaffViewUpdate },
