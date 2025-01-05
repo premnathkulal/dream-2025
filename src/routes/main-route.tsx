@@ -4,11 +4,15 @@ import AuthGuard from "../AuthGuard";
 import Login from "../pages/login-page/Login";
 import Home from "../pages/home-page/Home";
 import NotFound from "../pages/not-found/NotFound";
+import CreateCompany from "../pages/create-company/CreateCompany";
 
 export enum Routes {
   HOME = "/",
-  LOGIN = "/login",
   NOT_FOUND = "*",
+  LOGIN = "/login",
+  CreateCompany = "/create-company",
+  CreateBrand = "/create-brand",
+  CreateCategory = "/create-category",
 }
 
 const appRouter = createBrowserRouter([
@@ -25,12 +29,36 @@ const appRouter = createBrowserRouter([
         ),
       },
       {
+        path: Routes.NOT_FOUND,
+        element: <NotFound />,
+      },
+      {
         path: Routes.LOGIN,
         element: <Login />,
       },
       {
-        path: Routes.NOT_FOUND,
-        element: <NotFound />,
+        path: Routes.CreateCompany,
+        element: (
+          <AuthGuard>
+            <CreateCompany />
+          </AuthGuard>
+        ),
+      },
+      {
+        path: Routes.CreateBrand,
+        element: (
+          <AuthGuard>
+            <div>Create Brand</div>
+          </AuthGuard>
+        ),
+      },
+      {
+        path: Routes.CreateCategory,
+        element: (
+          <AuthGuard>
+            <div>Create Category</div>
+          </AuthGuard>
+        ),
       },
     ],
   },
