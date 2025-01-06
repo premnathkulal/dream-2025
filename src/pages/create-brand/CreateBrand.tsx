@@ -6,6 +6,7 @@ import animationData from "../../assets/lottie/brand.json";
 
 const CreateBrand = () => {
   const [brandName, setBrandName] = useState("");
+  const [companyName, setCompanyName] = useState("");
   const [previewImgSrc, setPreviewImgSrc] = useState("");
   const [fileName, setFileName] = useState("");
 
@@ -35,6 +36,15 @@ const CreateBrand = () => {
           <div className="form-title">
             <p>Create Brand</p>
           </div>
+          <InputBox
+            id="company-name"
+            name="company-name"
+            type={InputTypes.DropDown}
+            label="Company Name"
+            value={companyName}
+            isRequired
+            setInputValue={setCompanyName}
+          />
           <InputBox
             id="brand-name"
             name="brand-name"

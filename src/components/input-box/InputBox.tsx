@@ -13,6 +13,7 @@ export enum InputTypes {
   Radio = "radio",
   File = "file",
   Submit = "submit",
+  DropDown = "DropDown",
 }
 
 interface InputBoxProps {
@@ -42,15 +43,33 @@ const InputBox = (props: InputBoxProps) => {
     handleSelectedFile,
   } = props;
 
+  if (type === InputTypes.DropDown) {
+    return (
+      <div className="input-container dropdown-input">
+        <select className="input-field dropdown-select" id="customDropdown">
+          <option value="" hidden>
+            {/* Select an {label} */}
+          </option>
+          <option value="option1">Option 1</option>
+          <option value="option2">Option 2</option>
+          <option value="option3">Option 3</option>
+        </select>
+        <label htmlFor="customDropdown" className="dropdown-label">
+          {label}
+        </label>
+      </div>
+    );
+  }
+
   if (type === InputTypes.File) {
-    function displayFile(event: React.ChangeEvent<HTMLInputElement>): void {
+    const displayFile = (event: React.ChangeEvent<HTMLInputElement>): void => {
       if (event.target.files && event.target.files.length > 0) {
         const file = event.target.files[0];
         if (handleSelectedFile) {
           handleSelectedFile(file);
         }
       }
-    }
+    };
 
     return (
       <div className="input-container">
