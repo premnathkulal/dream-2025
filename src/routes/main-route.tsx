@@ -5,6 +5,7 @@ import Login from "../pages/login-page/Login";
 import Home from "../pages/home-page/Home";
 import NotFound from "../pages/not-found/NotFound";
 import CreateCompany from "../pages/create-company/CreateCompany";
+import CreateBrand from "../pages/create-brand/CreateBrand";
 
 export enum Routes {
   HOME = "/",
@@ -48,7 +49,7 @@ const appRouter = createBrowserRouter([
         path: Routes.CreateBrand,
         element: (
           <AuthGuard>
-            <div>Create Brand</div>
+            <CreateBrand />
           </AuthGuard>
         ),
       },

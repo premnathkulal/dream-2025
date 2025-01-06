@@ -1,17 +1,17 @@
-import "./CreateCompany.scss";
+import "./CreateBrand.scss";
 import { FormEvent, useState } from "react";
 import InputBox, { InputTypes } from "../../components/input-box/InputBox";
 import Lottie from "lottie-react";
-import animationData from "../../assets/lottie/company.json";
+import animationData from "../../assets/lottie/brand.json";
 
-const CreateCompany = () => {
-  const [companyName, setCompanyName] = useState("");
+const CreateBrand = () => {
+  const [brandName, setBrandName] = useState("");
   const [previewImgSrc, setPreviewImgSrc] = useState("");
   const [fileName, setFileName] = useState("");
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("company name:", companyName);
+    console.log("brand name:", brandName);
   };
 
   function handleSelectedFile(file: File) {
@@ -33,25 +33,25 @@ const CreateCompany = () => {
       <div className="form-container">
         <form className="form" onSubmit={handleSubmit}>
           <div className="form-title">
-            <p>Create Company</p>
+            <p>Create Brand</p>
           </div>
           <InputBox
-            id="company-name"
-            name="company-name"
+            id="brand-name"
+            name="brand-name"
             type={InputTypes.Text}
-            label="Company Name"
-            value={companyName}
+            label="Brand Name"
+            value={brandName}
             isRequired
-            setInputValue={setCompanyName}
+            setInputValue={setBrandName}
           />
           <InputBox
             id="select-logo-file"
             name="select-logo-file"
             type={InputTypes.File}
-            label="Select Company Logo"
-            value={companyName}
+            label="Select Brand Logo"
+            value={brandName}
             isRequired
-            setInputValue={setCompanyName}
+            setInputValue={setBrandName}
             handleSelectedFile={handleSelectedFile}
           />
 
@@ -61,7 +61,7 @@ const CreateCompany = () => {
 
           {previewImgSrc && (
             <img
-              id="company-logo"
+              id="brand-logo"
               className="image-preview"
               src={previewImgSrc}
               alt="Image Preview"
@@ -77,4 +77,4 @@ const CreateCompany = () => {
   );
 };
 
-export default CreateCompany;
+export default CreateBrand;

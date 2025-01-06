@@ -54,7 +54,7 @@ const AdminLogin = () => {
             handleShowHideInput={handleShowPassword}
           />
           <button type="submit" className="btn">
-            Login
+            LOGIN
           </button>
           <a href="/#" className="forgot-password-link">
             Forgot Password?
