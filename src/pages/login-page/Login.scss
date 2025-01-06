@@ -14,7 +14,8 @@
     min-width: 28rem;
 
     @media screen and (max-width: 768px) {
-      min-width: 75%;
+      min-width: 100%;
+      box-shadow: unset;
     }
 
     .login-form {
@@ -40,24 +41,6 @@
         p {
           padding: 0;
           margin: 0;
-        }
-      }
-
-      .btn {
-        display: block;
-        width: 100%;
-        padding: 0.8rem;
-        background: var.$white;
-        color: var.$primary-color;
-        border: 1px solid var.$primary-color;
-        font-size: 1rem;
-        font-weight: bold;
-        border-radius: 5px;
-        cursor: pointer;
-        text-align: center;
-        &:hover {
-          background: var.$primary-color;
-          color: var.$white;
         }
       }
 

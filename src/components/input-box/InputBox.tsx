@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./InputBox.scss";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
+import { faFile, faFileImage } from "@fortawesome/free-solid-svg-icons";
 
 export enum InputTypes {
   Text = "text",
@@ -24,6 +25,7 @@ interface InputBoxProps {
   isHiddenInput?: boolean;
   setInputValue: (value: string) => void;
   handleShowHideInput?: () => void;
+  handleSelectedFile?: (e: any) => void;
 }
 
 const InputBox = (props: InputBoxProps) => {
@@ -37,7 +39,35 @@ const InputBox = (props: InputBoxProps) => {
     isHiddenInput,
     setInputValue,
     handleShowHideInput,
+    handleSelectedFile,
   } = props;
+
+  if (type === InputTypes.File) {
+    function displayFile(event: React.ChangeEvent<HTMLInputElement>): void {
+      if (event.target.files && event.target.files.length > 0) {
+        const file = event.target.files[0];
+        if (handleSelectedFile) {
+          handleSelectedFile(file);
+        }
+      }
+    }
+
+    return (
+      <div className="input-container">
+        <label htmlFor={id} className="file-label">
+          <div>{label}</div>
+          <FontAwesomeIcon icon={faFileImage} className="file-icon" />
+        </label>
+        <input
+          id={id}
+          type={type}
+          className="file-input"
+          accept="image/*"
+          onChange={displayFile}
+        />
+      </div>
+    );
+  }
 
   return (
     <div className="input-container">
