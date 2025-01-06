@@ -1,9 +1,9 @@
 import "./Login.scss";
-import VamshaLogo from "../../assets/react.svg";
+import AppLogo from "../../assets/react.svg";
 import { FormEvent, useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
-import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
+import InputBox, { InputTypes } from "../../components/input-box/InputBox";
 
 const AdminLogin = () => {
   const [userName, setUserName] = useState("");
@@ -31,44 +31,28 @@ const AdminLogin = () => {
         <form className="login-form" onSubmit={handleSubmit}>
           <div className="form-title">
             <p>Admin Login</p>
-            <img src={VamshaLogo} alt="brand-logo" className="brand-logo" />
+            <img src={AppLogo} alt="brand-logo" className="brand-logo" />
           </div>
-          <div className="form-group">
-            <input
-              type="text"
-              id="username"
-              name="username"
-              value={userName}
-              onChange={(e) => setUserName(e.target.value)}
-              placeholder="Enter your username"
-              required
-            />
-          </div>
-          <div className="form-group form-group-password">
-            <input
-              type={!showPassword ? "password" : "text"}
-              id="password"
-              name="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Enter your password"
-              required
-            />
-            {!showPassword && (
-              <FontAwesomeIcon
-                icon={faEye}
-                className="eye-icon"
-                onClick={handleShowPassword}
-              />
-            )}
-            {showPassword && (
-              <FontAwesomeIcon
-                icon={faEyeSlash}
-                className="eye-icon"
-                onClick={handleShowPassword}
-              />
-            )}
-          </div>
+          <InputBox
+            id="user-name"
+            name="user-name"
+            type={InputTypes.Text}
+            label="Name"
+            value={userName}
+            isRequired
+            setInputValue={setUserName}
+          />
+          <InputBox
+            id="password"
+            name="password"
+            type={!showPassword ? InputTypes.Password : InputTypes.Text}
+            label="Password"
+            value={password}
+            isRequired
+            isHiddenInput
+            setInputValue={setPassword}
+            handleShowHideInput={handleShowPassword}
+          />
           <button type="submit" className="btn btn-primary">
             Login
           </button>
