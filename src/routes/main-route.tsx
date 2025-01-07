@@ -6,6 +6,8 @@ import Home from "../pages/home-page/Home";
 import NotFound from "../pages/not-found/NotFound";
 import CreateCompany from "../pages/create-company/CreateCompany";
 import CreateBrand from "../pages/create-brand/CreateBrand";
+import CreateCategory from "../pages/create-category/CreateCategory";
+import CreateUnit from "../pages/create-unit/CreateUnit";
 
 export enum Routes {
   HOME = "/",
@@ -14,6 +16,7 @@ export enum Routes {
   CreateCompany = "/create-company",
   CreateBrand = "/create-brand",
   CreateCategory = "/create-category",
+  CreateUnit = "/create-unit",
 }
 
 const appRouter = createBrowserRouter([
@@ -57,7 +60,15 @@ const appRouter = createBrowserRouter([
         path: Routes.CreateCategory,
         element: (
           <AuthGuard>
-            <div>Create Category</div>
+            <CreateCategory />
+          </AuthGuard>
+        ),
+      },
+      {
+        path: Routes.CreateUnit,
+        element: (
+          <AuthGuard>
+            <CreateUnit />
           </AuthGuard>
         ),
       },

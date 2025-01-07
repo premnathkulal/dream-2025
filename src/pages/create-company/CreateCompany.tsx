@@ -2,7 +2,7 @@ import "./CreateCompany.scss";
 import { FormEvent, useState } from "react";
 import InputBox, { InputTypes } from "../../components/input-box/InputBox";
 import Lottie from "lottie-react";
-import animationData from "../../assets/lottie/company.json";
+import animationData from "../../assets/lottie/team-anim-1.json";
 
 const CreateCompany = () => {
   const [companyName, setCompanyName] = useState("");
