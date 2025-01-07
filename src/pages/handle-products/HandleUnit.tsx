@@ -1,10 +1,10 @@
-import "./CreateUnit.scss";
+import "./HandleUnit.scss";
 import { FormEvent, useState } from "react";
 import InputBox, { InputTypes } from "../../components/input-box/InputBox";
 import Lottie from "lottie-react";
 import animationData from "../../assets/lottie/unit-anim.json";
 
-const CreateUnit = () => {
+const HandleUnit = () => {
   const [unit, setUnit] = useState("");
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -40,4 +40,4 @@ const CreateUnit = () => {
   );
 };
 
-export default CreateUnit;
+export default HandleUnit;

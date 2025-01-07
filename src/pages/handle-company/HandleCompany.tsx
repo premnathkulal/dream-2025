@@ -1,18 +1,17 @@
-import "./CreateBrand.scss";
+import "./HandleCompany.scss";
 import { FormEvent, useState } from "react";
 import InputBox, { InputTypes } from "../../components/input-box/InputBox";
 import Lottie from "lottie-react";
-import animationData from "../../assets/lottie/brand.json";
+import animationData from "../../assets/lottie/team-anim-1.json";
 
-const CreateBrand = () => {
-  const [brandName, setBrandName] = useState("");
+const HandleCompany = () => {
   const [companyName, setCompanyName] = useState("");
   const [previewImgSrc, setPreviewImgSrc] = useState("");
   const [fileName, setFileName] = useState("");
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("brand name:", brandName);
+    console.log("company name:", companyName);
   };
 
   function handleSelectedFile(file: File) {
@@ -34,48 +33,25 @@ const CreateBrand = () => {
       <div className="form-container">
         <form className="form" onSubmit={handleSubmit}>
           <div className="form-title">
-            <p>Create Brand</p>
+            <p>Create Company</p>
           </div>
           <InputBox
             id="company-name"
             name="company-name"
-            type={InputTypes.DropDown}
+            type={InputTypes.Text}
             label="Company Name"
             value={companyName}
             isRequired
             setInputValue={setCompanyName}
-            options={[
-              {
-                id: "1",
-                title: "option1",
-              },
-              {
-                id: "2",
-                title: "option2",
-              },
-              {
-                id: "3",
-                title: "option3",
-              },
-            ]}
-          />
-          <InputBox
-            id="brand-name"
-            name="brand-name"
-            type={InputTypes.Text}
-            label="Brand Name"
-            value={brandName}
-            isRequired
-            setInputValue={setBrandName}
           />
           <InputBox
             id="select-logo-file"
             name="select-logo-file"
             type={InputTypes.File}
-            label="Select Brand Logo"
-            value={brandName}
+            label="Select Company Logo"
+            value={companyName}
             isRequired
-            setInputValue={setBrandName}
+            setInputValue={setCompanyName}
             handleSelectedFile={handleSelectedFile}
           />
 
@@ -85,7 +61,7 @@ const CreateBrand = () => {
 
           {previewImgSrc && (
             <img
-              id="brand-logo"
+              id="company-logo"
               className="image-preview"
               src={previewImgSrc}
               alt="Image Preview"
@@ -101,4 +77,4 @@ const CreateBrand = () => {
   );
 };
 
-export default CreateBrand;
+export default HandleCompany;

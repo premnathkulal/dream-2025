@@ -1,10 +1,10 @@
-import "./CreateCategory.scss";
+import "./HandleCategory.scss";
 import { FormEvent, useState } from "react";
 import InputBox, { InputTypes } from "../../components/input-box/InputBox";
 import Lottie from "lottie-react";
 import animationData from "../../assets/lottie/team-anim.json";
 
-const CreateCategory = () => {
+const HandleCategory = () => {
   const [category, setCategory] = useState("");
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
@@ -40,4 +40,4 @@ const CreateCategory = () => {
   );
 };
 
-export default CreateCategory;
+export default HandleCategory;

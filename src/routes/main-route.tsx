@@ -4,10 +4,10 @@ import AuthGuard from "../AuthGuard";
 import Login from "../pages/login-page/Login";
 import Home from "../pages/home-page/Home";
 import NotFound from "../pages/not-found/NotFound";
-import CreateCompany from "../pages/create-company/CreateCompany";
-import CreateBrand from "../pages/create-brand/CreateBrand";
-import CreateCategory from "../pages/create-category/CreateCategory";
-import CreateUnit from "../pages/create-unit/CreateUnit";
+import HandleCompany from "../pages/handle-company/HandleCompany";
+import HandleBrand from "../pages/handle-brand/HandleBrand";
+import HandleCategory from "../pages/handle-category/HandleCategory";
+import HandleUnit from "../pages/handle-unit/HandleUnit";
 
 export enum Routes {
   HOME = "/",
@@ -17,6 +17,7 @@ export enum Routes {
   HandleBrand = "/handle-brand",
   HandleCategory = "/handle-category",
   HandleUnit = "/handle-unit",
+  HandleProduct = "/handle-product",
 }
 
 const appRouter = createBrowserRouter([
@@ -44,7 +45,7 @@ const appRouter = createBrowserRouter([
         path: Routes.HandleCompany,
         element: (
           <AuthGuard>
-            <CreateCompany />
+            <HandleCompany />
           </AuthGuard>
         ),
       },
@@ -52,7 +53,7 @@ const appRouter = createBrowserRouter([
         path: Routes.HandleBrand,
         element: (
           <AuthGuard>
-            <CreateBrand />
+            <HandleBrand />
           </AuthGuard>
         ),
       },
@@ -60,7 +61,7 @@ const appRouter = createBrowserRouter([
         path: Routes.HandleCategory,
         element: (
           <AuthGuard>
-            <CreateCategory />
+            <HandleCategory />
           </AuthGuard>
         ),
       },
@@ -68,7 +69,7 @@ const appRouter = createBrowserRouter([
         path: Routes.HandleUnit,
         element: (
           <AuthGuard>
-            <CreateUnit />
+            <HandleUnit />
           </AuthGuard>
         ),
       },
