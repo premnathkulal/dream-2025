@@ -118,6 +118,12 @@
   margin-left: -4px;
 }
 
+.dropdown-label-selected {
+  top: 12px !important;
+  font-size: 16px !important;
+  color: var.$gray !important;
+}
+
 /* Add a caret for the dropdown */
 .dropdown-input::after {
   content: "▼";
@@ -144,8 +150,4 @@
 .dropdown-select option:hover {
   background-color: var.$secondary-color; /* Hover background */
   color: var.$white; /* Hover text color */
-}
-
-.dropdown-select-placeholder {
-  color: red !important;
 }

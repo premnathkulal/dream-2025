@@ -1,7 +1,8 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./InputBox.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
-import { faFile, faFileImage } from "@fortawesome/free-solid-svg-icons";
+import { faFileImage } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 
 export enum InputTypes {
   Text = "text",
@@ -16,6 +17,11 @@ export enum InputTypes {
   DropDown = "DropDown",
 }
 
+interface DropdownOptions {
+  id: string;
+  title: string;
+}
+
 interface InputBoxProps {
   id: string;
   name: string;
@@ -24,6 +30,7 @@ interface InputBoxProps {
   label: string;
   isRequired: boolean;
   isHiddenInput?: boolean;
+  options?: DropdownOptions[];
   setInputValue: (value: string) => void;
   handleShowHideInput?: () => void;
   handleSelectedFile?: (e: any) => void;
@@ -38,23 +45,37 @@ const InputBox = (props: InputBoxProps) => {
     label,
     isRequired,
     isHiddenInput,
+    options,
     setInputValue,
     handleShowHideInput,
     handleSelectedFile,
   } = props;
 
   if (type === InputTypes.DropDown) {
+    const [selectedValue, setSelectedValue] = useState("");
+
     return (
       <div className="input-container dropdown-input">
-        <select className="input-field dropdown-select" id="customDropdown">
-          <option value="" hidden>
-            {/* Select an {label} */}
-          </option>
-          <option value="option1">Option 1</option>
-          <option value="option2">Option 2</option>
-          <option value="option3">Option 3</option>
+        <select
+          className="input-field dropdown-select"
+          id="customDropdown"
+          value={selectedValue}
+          onChange={(e) => setSelectedValue(e.target.value)}
+        >
+          <option value="" hidden></option>
+          {options?.length &&
+            options.map((data) => (
+              <option value={data.id} key={data.id}>
+                {data.title}
+              </option>
+            ))}
         </select>
-        <label htmlFor="customDropdown" className="dropdown-label">
+        <label
+          htmlFor="customDropdown"
+          className={`dropdown-label ${
+            !selectedValue ? "dropdown-label-selected" : ""
+          }`}
+        >
           {label}
         </label>
       </div>
