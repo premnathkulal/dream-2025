@@ -44,20 +44,7 @@ const HandleBrand = () => {
             value={companyName}
             isRequired
             setInputValue={setCompanyName}
-            options={[
-              {
-                id: "1",
-                title: "option1",
-              },
-              {
-                id: "2",
-                title: "option2",
-              },
-              {
-                id: "3",
-                title: "option3",
-              },
-            ]}
+            options={[]}
           />
           <InputBox
             id="brand-name"

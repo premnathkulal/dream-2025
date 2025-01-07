@@ -8,6 +8,7 @@ import HandleCompany from "../pages/handle-company/HandleCompany";
 import HandleBrand from "../pages/handle-brand/HandleBrand";
 import HandleCategory from "../pages/handle-category/HandleCategory";
 import HandleUnit from "../pages/handle-unit/HandleUnit";
+import HandleProduct from "../pages/handle-product/HandleProduct";
 
 export enum Routes {
   HOME = "/",
@@ -70,6 +71,14 @@ const appRouter = createBrowserRouter([
         element: (
           <AuthGuard>
             <HandleUnit />
+          </AuthGuard>
+        ),
+      },
+      {
+        path: Routes.HandleProduct,
+        element: (
+          <AuthGuard>
+            <HandleProduct />
           </AuthGuard>
         ),
       },
