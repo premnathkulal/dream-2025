@@ -120,6 +120,7 @@ const InputBox = (props: InputBoxProps) => {
         value={value}
         onChange={(e) => setInputValue(e.target.value)}
         required={isRequired}
+        autoComplete={type === InputTypes.Password ? "new-password" : "off"}
       />
       <label htmlFor={id} className="input-label">
         {label}
