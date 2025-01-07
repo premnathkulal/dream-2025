@@ -8,7 +8,7 @@ const HandleProduct = () => {
   const [companyName, setCompanyName] = useState("");
   const [salePrice, setSalePrice] = useState("");
   const [purchasePrice, setPurchasePrice] = useState("");
-  const [productWeight, setProductWeight] = useState("");
+  const [productQuantity, setProductQuantity] = useState("");
   const [gstValue, setGstValue] = useState("");
   const [cessValue, setCessValue] = useState("");
   const [hsnCode, setHsnCode] = useState("");
@@ -16,6 +16,7 @@ const HandleProduct = () => {
   const [scheme, setScheme] = useState("");
   const [previewImgSrc, setPreviewImgSrc] = useState("");
   const [fileName, setFileName] = useState("");
+  const [productUnit, setProductUnit] = useState("");
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -34,7 +35,7 @@ const HandleProduct = () => {
   }
 
   return (
-    <div className="medium-create-form">
+    <div className="create-product-form">
       <div className="form-title">Create Product</div>
       <form className="form-container" onSubmit={handleSubmit}>
         <div className="form-items">
@@ -44,7 +45,12 @@ const HandleProduct = () => {
             type={InputTypes.DropDown}
             label="Company Name"
             value={companyName}
-            options={[]}
+            options={[
+              {
+                id: "1",
+                title: "Op1",
+              },
+            ]}
             isRequired
             setInputValue={setCompanyName}
           />
@@ -74,6 +80,8 @@ const HandleProduct = () => {
             label="Purchase Price"
             value={purchasePrice}
             isRequired
+            showUnit
+            unit="Rs"
             setInputValue={setPurchasePrice}
           />
           <InputBox
@@ -83,17 +91,35 @@ const HandleProduct = () => {
             label="Sale Price"
             value={salePrice}
             isRequired
+            showUnit
+            unit="Rs"
             setInputValue={setSalePrice}
           />
-          <InputBox
-            id="product-weight"
-            name="product-weight"
-            type={InputTypes.Text}
-            label="Product Weight"
-            value={productWeight}
-            isRequired
-            setInputValue={setProductWeight}
-          />
+          <div className="product-quantity">
+            <div>
+              <InputBox
+                id="product-quantity"
+                name="product-quantity"
+                type={InputTypes.Text}
+                label="Product Quantity"
+                value={productQuantity}
+                isRequired
+                setInputValue={setProductQuantity}
+              />
+            </div>
+            <div>
+              <InputBox
+                id="product-unit"
+                name="product-unit"
+                type={InputTypes.DropDown}
+                label="Unit"
+                value={productUnit}
+                options={[]}
+                isRequired
+                setInputValue={setProductUnit}
+              />
+            </div>
+          </div>
           <InputBox
             id="gst-value"
             name="gst-value"

@@ -4,6 +4,12 @@
   position: relative;
   width: 100%;
 
+  .mat-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
   .input-field {
     width: 100%;
     padding: 10px 12px;
@@ -39,6 +45,13 @@
     background-color: var.$white;
     padding: 0 4px;
     margin-left: -4px;
+  }
+
+  .mat-input-unit {
+    position: absolute;
+    right: 12px;
+    font-size: 14px;
+    color: var.$primary-color;
   }
 
   .file-label {
@@ -78,10 +91,6 @@
   }
 
   .show-hide-icon {
-    position: absolute;
-    left: 90%;
-    top: 30%;
-
     .eye-icon {
       font-size: 1.25rem;
       cursor: pointer;

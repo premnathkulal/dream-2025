@@ -1,6 +1,6 @@
 @use "../../styles/variables" as var;
 
-.medium-create-form {
+.create-product-form {
   width: 100%;
   display: flex;
   align-items: flex-start;
@@ -42,6 +42,20 @@
         border-right: 1px solid var.$gray;
       }
 
+      .product-quantity {
+        width: 100%;
+        display: flex;
+        gap: 1rem;
+      }
+
+      .product-quantity > :first-child {
+        flex-grow: 6;
+      }
+
+      .product-quantity > :nth-child(2) {
+        flex-grow: 4;
+      }
+
       .image-preview {
         height: auto;
         border: 1px solid var.$light-gray;
@@ -72,10 +86,10 @@
     .form-container {
       flex-direction: column;
       width: 100%;
-      margin-bottom: 1rem;
 
       .form-items {
         padding: unset;
+        padding-bottom: 2rem;
         width: 100%;
         border-right: unset !important;
       }

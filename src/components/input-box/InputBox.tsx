@@ -29,6 +29,8 @@ interface InputBoxProps {
   value: string;
   label: string;
   isRequired: boolean;
+  showUnit?: boolean;
+  unit?: string;
   isHiddenInput?: boolean;
   options?: DropdownOptions[];
   setInputValue: (value: string) => void;
@@ -46,6 +48,8 @@ const InputBox = (props: InputBoxProps) => {
     isRequired,
     isHiddenInput,
     options,
+    showUnit,
+    unit,
     setInputValue,
     handleShowHideInput,
     handleSelectedFile,
@@ -111,38 +115,44 @@ const InputBox = (props: InputBoxProps) => {
 
   return (
     <div className="input-container">
-      <input
-        id={id}
-        name={name}
-        type={type}
-        className="input-field"
-        placeholder=""
-        value={value}
-        onChange={(e) => setInputValue(e.target.value)}
-        required={isRequired}
-        autoComplete={type === InputTypes.Password ? "new-password" : "off"}
-      />
-      <label htmlFor={id} className="input-label">
-        {label}
-      </label>
-      {isHiddenInput && (
-        <div className="show-hide-icon">
-          {type === InputTypes.Password && (
-            <FontAwesomeIcon
-              icon={faEye}
-              className="eye-icon"
-              onClick={handleShowHideInput}
-            />
+      <div className="mat-input-wrapper">
+        <input
+          id={id}
+          name={name}
+          type={type}
+          className="input-field"
+          placeholder=""
+          value={value}
+          onChange={(e) => setInputValue(e.target.value)}
+          required={isRequired}
+          autoComplete={type === InputTypes.Password ? "new-password" : "off"}
+        />
+        <label htmlFor={id} className="input-label">
+          {label}
+        </label>
+
+        <span className="mat-input-unit">
+          {isHiddenInput && (
+            <div className="show-hide-icon">
+              {type === InputTypes.Password && (
+                <FontAwesomeIcon
+                  icon={faEye}
+                  className="eye-icon"
+                  onClick={handleShowHideInput}
+                />
+              )}
+              {type === InputTypes.Text && (
+                <FontAwesomeIcon
+                  icon={faEyeSlash}
+                  className="eye-icon"
+                  onClick={handleShowHideInput}
+                />
+              )}
+            </div>
           )}
-          {type === InputTypes.Text && (
-            <FontAwesomeIcon
-              icon={faEyeSlash}
-              className="eye-icon"
-              onClick={handleShowHideInput}
-            />
-          )}
-        </div>
-      )}
+          {showUnit && <div className="unit">{unit}</div>}
+        </span>
+      </div>
     </div>
   );
 };
