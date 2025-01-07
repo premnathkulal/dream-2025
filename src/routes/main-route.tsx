@@ -13,10 +13,10 @@ export enum Routes {
   HOME = "/",
   NOT_FOUND = "*",
   LOGIN = "/login",
-  CreateCompany = "/create-company",
-  CreateBrand = "/create-brand",
-  CreateCategory = "/create-category",
-  CreateUnit = "/create-unit",
+  HandleCompany = "/handle-company",
+  HandleBrand = "/handle-brand",
+  HandleCategory = "/handle-category",
+  HandleUnit = "/handle-unit",
 }
 
 const appRouter = createBrowserRouter([
@@ -41,7 +41,7 @@ const appRouter = createBrowserRouter([
         element: <Login />,
       },
       {
-        path: Routes.CreateCompany,
+        path: Routes.HandleCompany,
         element: (
           <AuthGuard>
             <CreateCompany />
@@ -49,7 +49,7 @@ const appRouter = createBrowserRouter([
         ),
       },
       {
-        path: Routes.CreateBrand,
+        path: Routes.HandleBrand,
         element: (
           <AuthGuard>
             <CreateBrand />
@@ -57,7 +57,7 @@ const appRouter = createBrowserRouter([
         ),
       },
       {
-        path: Routes.CreateCategory,
+        path: Routes.HandleCategory,
         element: (
           <AuthGuard>
             <CreateCategory />
@@ -65,7 +65,7 @@ const appRouter = createBrowserRouter([
         ),
       },
       {
-        path: Routes.CreateUnit,
+        path: Routes.HandleUnit,
         element: (
           <AuthGuard>
             <CreateUnit />

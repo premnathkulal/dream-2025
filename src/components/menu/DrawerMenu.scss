@@ -2,7 +2,7 @@
 
 .drawer-menu {
   position: fixed;
-  background: rgba(33, 29, 29, 0.374);
+  background: rgba(var.$light-gray, 0.98);
   height: 100%;
   width: 100%;
   left: 0;
@@ -27,7 +27,6 @@
 
     ul {
       font-size: 14px;
-      // padding-left: ;
 
       .sub-category-title {
         margin-top: 1rem;

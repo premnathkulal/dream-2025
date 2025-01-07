@@ -1,6 +1,8 @@
 @use "../../styles/variables" as var;
 
 .master-menu {
+  z-index: 1000;
+
   .drawer-menu-container {
     display: none;
   }

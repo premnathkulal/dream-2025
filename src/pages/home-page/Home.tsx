@@ -1,12 +1,7 @@
-import MasterMenu from "../../components/menu/MasterMenu";
 import "./Home.scss";
 
 const Home = () => {
-  return (
-    <div className="home">
-      <MasterMenu />
-    </div>
-  );
+  return <div className="home">Home</div>;
 };
 
 export default Home;
