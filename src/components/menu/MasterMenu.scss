@@ -61,36 +61,49 @@
   .menu-category li:hover {
     background-color: var.$background-color;
   }
+  .dropdown-sub-categories {
+    column-count: 4;
 
-  .menu-category:hover .dropdown-sub-categories {
-    display: flex !important;
-  }
-
-  .dropdown-sub-category {
-    display: flex;
-    flex-direction: column;
-
-    .sub-category-title {
-      padding: 0.3rem 0;
-      border-bottom: 1px solid var.$primary-color;
-      margin-bottom: 0.8rem;
+    @media (max-width: 1200px) {
+      column-count: 3;
     }
 
-    .menu-item {
-      font-size: 1rem;
-      font-weight: 400;
+    @media (max-width: 992px) {
+      column-count: 2;
+    }
 
-      .menu-title {
-        padding: 0.2rem 0;
+    @media (max-width: 768px) {
+      column-count: 1;
+    }
 
-        &:hover {
-          font-weight: 600;
+    .dropdown-sub-category {
+      display: flex;
+      flex-direction: column;
+      break-inside: avoid;
+      word-wrap: break-word;
+
+      .sub-category-title {
+        padding: 0.3rem 0;
+        border-bottom: 1px solid var.$primary-color;
+        margin-bottom: 0.8rem;
+      }
+
+      .menu-item {
+        font-size: 1rem;
+        font-weight: 400;
+
+        .menu-title {
+          padding: 0.2rem 0;
+
+          &:hover {
+            font-weight: 600;
+          }
         }
       }
-    }
 
-    &:hover {
-      background: unset !important;
+      &:hover {
+        background: unset !important;
+      }
     }
   }
 }
