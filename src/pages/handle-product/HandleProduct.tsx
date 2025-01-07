@@ -158,6 +158,8 @@ const HandleProduct = () => {
             label="Discount"
             value={discount}
             isRequired
+            showUnit
+            unit="%"
             setInputValue={setDiscount}
           />
           <InputBox

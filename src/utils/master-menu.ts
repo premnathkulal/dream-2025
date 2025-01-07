@@ -106,11 +106,26 @@ enum MenuItems {
   GSTTDSReportGSTPurchaseSummary = "GST purchase summary",
   GSTTDSReportTDSReport = "TDS Report",
   GSTTDSReportTCSReport = "TCS report",
-  MyProfile = "My Profile",
   DamageClaimCreate = "Damage Claim create",
   DamageClaimListAndChange = "Damage Claim List and Change",
   DamageClaimDetailReport = "Claim detail report",
   CreateSupplier = "Create supplier",
+  Customer = "Customer",
+  Supplier = "Supplier",
+  Staff = "Staff",
+  Beat = "Beat",
+  Products = "Products",
+  CreateProducts = "Create Products",
+  CreateCompany = "Create Company",
+  CreateCategory = "Create Category",
+  CreateUnit = "Create Unit",
+  CreateBrand = "Create Brand",
+  ViewProducts = "View Products",
+  ViewCompany = "View Company",
+  ViewCategory = "View Category",
+  ViewUnit = "View Unit",
+  ViewBrand = "View Brand",
+  Other = "Other",
 }
 
 const Menu = [
@@ -122,6 +137,103 @@ const Menu = [
       { id: 1, name: MenuItems.GoodsReceiptEntry },
       { id: 2, name: MenuItems.PurchaseInvoiceView },
       { id: 3, name: MenuItems.GoodsShortageReturns },
+    ],
+  },
+  {
+    id: 6,
+    category: MenuCategories.Master,
+    hasSubCategory: true,
+    items: [
+      {
+        id: 60,
+        subCategory: MenuItems.Products,
+        name: MenuItems.Products,
+        items: [
+          {
+            id: 601,
+            name: MenuItems.CreateCompany,
+          },
+          {
+            id: 602,
+            name: MenuItems.ViewCompany,
+          },
+          {
+            id: 603,
+            name: MenuItems.CreateBrand,
+          },
+          {
+            id: 604,
+            name: MenuItems.ViewBrand,
+          },
+          {
+            id: 605,
+            name: MenuItems.CreateCategory,
+          },
+          {
+            id: 606,
+            name: MenuItems.ViewCategory,
+          },
+          {
+            id: 607,
+            name: MenuItems.CreateUnit,
+          },
+          {
+            id: 608,
+            name: MenuItems.ViewUnit,
+          },
+          {
+            id: 609,
+            name: MenuItems.CreateProducts,
+          },
+          {
+            id: 610,
+            name: MenuItems.ViewProducts,
+          },
+        ],
+      },
+      {
+        id: 26,
+        subCategory: MenuItems.Customer,
+        name: MenuItems.Customer,
+        items: [
+          { id: 27, name: MenuItems.CreateCustomer },
+          { id: 28, name: MenuItems.ViewUpdateCustomer },
+          { id: 303, name: MenuItems.CustomerRealignment },
+        ],
+      },
+      {
+        id: 29,
+        subCategory: MenuItems.Supplier,
+        name: MenuItems.Supplier,
+        items: [{ id: 30, name: MenuItems.CreateSupplier }],
+      },
+      {
+        id: 30,
+        subCategory: MenuItems.Staff,
+        name: MenuItems.Staff,
+        items: [
+          { id: 31, name: MenuItems.StaffAttendanceEntry },
+          { id: 32, name: MenuItems.StaffViewUpdate },
+        ],
+      },
+      {
+        id: 33,
+        subCategory: MenuItems.Beat,
+        name: MenuItems.Beat,
+        items: [
+          { id: 34, name: MenuItems.BeatCreate },
+          { id: 301, name: MenuItems.BeatUpdate },
+        ],
+      },
+      {
+        id: 304,
+        subCategory: MenuItems.Other,
+        name: MenuItems.Other,
+        items: [
+          { id: 32, name: MenuItems.BankCreate },
+          { id: 34, name: MenuItems.PriceMaster },
+        ],
+      },
     ],
   },
   {
@@ -251,23 +363,6 @@ const Menu = [
     ],
   },
   {
-    id: 6,
-    category: MenuCategories.Master,
-    hasSubCategory: false,
-    items: [
-      { id: 26, name: MenuItems.CreateCustomer },
-      { id: 96, name: MenuItems.CreateSupplier },
-      { id: 27, name: MenuItems.ViewUpdateCustomer },
-      { id: 28, name: MenuItems.StaffAttendanceEntry },
-      { id: 29, name: MenuItems.StaffViewUpdate },
-      { id: 30, name: MenuItems.BeatCreate },
-      { id: 31, name: MenuItems.BeatUpdate },
-      { id: 32, name: MenuItems.BankCreate },
-      { id: 33, name: MenuItems.CustomerRealignment },
-      { id: 34, name: MenuItems.PriceMaster },
-    ],
-  },
-  {
     id: 7,
     category: MenuCategories.Schemes,
     hasSubCategory: false,
@@ -276,12 +371,6 @@ const Menu = [
       { id: 36, name: MenuItems.ViewScheme },
       { id: 37, name: MenuItems.CombiCreateScheme },
     ],
-  },
-  {
-    id: 9,
-    category: MenuCategories.MyProfile,
-    hasSubCategory: false,
-    items: [{ id: 71, name: MenuItems.MyProfile }],
   },
   {
     id: 10,
