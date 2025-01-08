@@ -1,17 +1,18 @@
 import "./MasterMenu.scss";
-import { MenuItem, Menu, MenuCategory } from "../../utils/master-menu";
-import { useState } from "react";
 import DrawerMenu from "./DrawerMenu";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/app-store";
+import { MenuItem, Menu, MenuCategory } from "../../utils/master-menu";
+import useNavigation from "../../hooks/useNavigation";
 
 const MasterMenu = () => {
   const isDrawerMenuOpen =
     useSelector<RootState>((state) => state.uiControls.isDrawerMenuOpen) ??
     false;
+  const navigation = useNavigation();
 
   const handleItemClick = (item: MenuItem) => {
-    // TODO: Handle menu click
+    navigation.handleNavigation(item.path);
   };
 
   return (

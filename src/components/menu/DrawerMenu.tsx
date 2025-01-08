@@ -1,9 +1,16 @@
 import "./DrawerMenu.scss";
 import { MenuItem, Menu, MenuCategory } from "../../utils/master-menu";
+import useNavigation from "../../hooks/useNavigation";
+import { useDispatch } from "react-redux";
+import { toggleDrawerMenu } from "../../store/slices/ui-controls";
 
 const DrawerMenu = () => {
+  const dispatch = useDispatch();
+  const navigation = useNavigation();
+
   const handleItemClick = (item: MenuItem) => {
-    // TODO: Handle menu click
+    dispatch(toggleDrawerMenu(false));
+    navigation.handleNavigation(item.path);
   };
 
   return (

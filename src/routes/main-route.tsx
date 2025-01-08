@@ -9,17 +9,7 @@ import HandleBrand from "../pages/handle-brand/HandleBrand";
 import HandleCategory from "../pages/handle-category/HandleCategory";
 import HandleUnit from "../pages/handle-unit/HandleUnit";
 import HandleProduct from "../pages/handle-product/HandleProduct";
-
-export enum Routes {
-  HOME = "/",
-  NOT_FOUND = "*",
-  LOGIN = "/login",
-  HandleCompany = "/handle-company",
-  HandleBrand = "/handle-brand",
-  HandleCategory = "/handle-category",
-  HandleUnit = "/handle-unit",
-  HandleProduct = "/handle-product",
-}
+import { RoutesList } from "../utils/master-menu";
 
 const appRouter = createBrowserRouter([
   {
@@ -27,7 +17,7 @@ const appRouter = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: Routes.HOME,
+        path: RoutesList.HOME,
         element: (
           <AuthGuard>
             <Home />
@@ -35,15 +25,15 @@ const appRouter = createBrowserRouter([
         ),
       },
       {
-        path: Routes.NOT_FOUND,
+        path: RoutesList.NOT_FOUND,
         element: <NotFound />,
       },
       {
-        path: Routes.LOGIN,
+        path: RoutesList.LOGIN,
         element: <Login />,
       },
       {
-        path: Routes.HandleCompany,
+        path: RoutesList.HandleCompany,
         element: (
           <AuthGuard>
             <HandleCompany />
@@ -51,7 +41,7 @@ const appRouter = createBrowserRouter([
         ),
       },
       {
-        path: Routes.HandleBrand,
+        path: RoutesList.HandleBrand,
         element: (
           <AuthGuard>
             <HandleBrand />
@@ -59,7 +49,7 @@ const appRouter = createBrowserRouter([
         ),
       },
       {
-        path: Routes.HandleCategory,
+        path: RoutesList.HandleCategory,
         element: (
           <AuthGuard>
             <HandleCategory />
@@ -67,7 +57,7 @@ const appRouter = createBrowserRouter([
         ),
       },
       {
-        path: Routes.HandleUnit,
+        path: RoutesList.HandleUnit,
         element: (
           <AuthGuard>
             <HandleUnit />
@@ -75,7 +65,7 @@ const appRouter = createBrowserRouter([
         ),
       },
       {
-        path: Routes.HandleProduct,
+        path: RoutesList.HandleProduct,
         element: (
           <AuthGuard>
             <HandleProduct />

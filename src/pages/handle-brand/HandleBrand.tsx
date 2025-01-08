@@ -27,7 +27,7 @@ const HandleBrand = () => {
   }
 
   return (
-    <div className="simple-create-form">
+    <div id="main" className="simple-create-form">
       <div className="lottie-anim-container">
         <Lottie animationData={animationData} loop={true} />
       </div>

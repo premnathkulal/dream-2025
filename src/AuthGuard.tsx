@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Routes } from "./routes/main-route";
+import { RoutesList } from "./utils/master-menu";
 
 interface AuthGuardProps {
   children: React.ReactNode;
@@ -12,7 +12,7 @@ const AuthGuard: React.FC<AuthGuardProps> = ({ children }) => {
 
   useEffect(() => {
     if (!isAuthenticated) {
-      navigate(Routes.LOGIN);
+      navigate(RoutesList.LOGIN);
     }
   }, [isAuthenticated, history]);
 

@@ -1,23 +1,40 @@
-export interface SubMenuItem {
-  id: number;
-  name: string;
+// import { Routes } from "../routes/main-route";
+
+enum RoutesList {
+  HOME = "/",
+  NOT_FOUND = "*",
+  LOGIN = "/login",
+  HandleCompany = "/handle-company",
+  HandleBrand = "/handle-brand",
+  HandleCategory = "/handle-category",
+  HandleUnit = "/handle-unit",
+  HandleProduct = "/handle-product",
 }
 
-export interface MenuItem {
-  id: number;
+interface SubMenuItem {
+  id: number | string;
   name: string;
+  path?: RoutesList;
+}
+
+interface MenuItem {
+  id: number | string;
+  name: string;
+  path?: RoutesList;
   subCategory?: string;
   items?: SubMenuItem[];
 }
 
-export interface MenuCategory {
-  id: number;
+interface MenuCategory {
+  id: number | string;
   category: string;
+  path?: RoutesList;
   hasSubCategory: boolean;
   items: MenuItem[];
 }
 
 enum MenuCategories {
+  Home = "Home",
   Purchase = "Purchase",
   Stock = "Stock",
   Sales = "Sales",
@@ -135,6 +152,12 @@ enum MenuItems {
 
 const Menu = [
   {
+    id: 0,
+    category: MenuCategories.Home,
+    hasSubCategory: false,
+    items: [{ id: "home", name: MenuCategories.Home, path: RoutesList.HOME }],
+  },
+  {
     id: 1,
     category: MenuCategories.Purchase,
     hasSubCategory: false,
@@ -154,15 +177,31 @@ const Menu = [
         subCategory: MenuItems.Products,
         name: MenuItems.Products,
         items: [
-          { id: 211, name: MenuItems.CreateCompany },
+          {
+            id: 211,
+            name: MenuItems.CreateCompany,
+            path: RoutesList.HandleCompany,
+          },
           { id: 212, name: MenuItems.ViewCompany },
-          { id: 213, name: MenuItems.CreateBrand },
+          {
+            id: 213,
+            name: MenuItems.CreateBrand,
+            path: RoutesList.HandleBrand,
+          },
           { id: 214, name: MenuItems.ViewBrand },
-          { id: 215, name: MenuItems.CreateCategory },
+          {
+            id: 215,
+            name: MenuItems.CreateCategory,
+            path: RoutesList.HandleCategory,
+          },
           { id: 216, name: MenuItems.ViewCategory },
-          { id: 217, name: MenuItems.CreateUnit },
+          { id: 217, name: MenuItems.CreateUnit, path: RoutesList.HandleUnit },
           { id: 218, name: MenuItems.ViewUnit },
-          { id: 219, name: MenuItems.CreateProducts },
+          {
+            id: 219,
+            name: MenuItems.CreateProducts,
+            path: RoutesList.HandleProduct,
+          },
           { id: 220, name: MenuItems.ViewProducts },
         ],
       },
@@ -369,4 +408,5 @@ const Menu = [
   },
 ];
 
-export { MenuCategories, MenuItems, Menu };
+export { Menu, RoutesList };
+export type { MenuCategories, MenuItems, MenuCategory, MenuItem };
