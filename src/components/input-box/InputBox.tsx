@@ -36,7 +36,7 @@ interface InputBoxProps {
   options?: DropdownOptions[];
   setInputValue: (value: string) => void;
   handleShowHideInput?: () => void;
-  handleSelectedFile?: (e: any) => void;
+  handleSelectedFile?: (e: File) => void;
 }
 
 const InputBox = (props: InputBoxProps) => {

@@ -9,6 +9,7 @@ import HandleBrand from "../pages/handle-brand/HandleBrand";
 import HandleCategory from "../pages/handle-category/HandleCategory";
 import HandleUnit from "../pages/handle-unit/HandleUnit";
 import HandleProduct from "../pages/handle-product/HandleProduct";
+import HandleTaxMaster from "../pages/handle-tax-master/handleTaxMaster";
 import { RoutesList } from "../utils/master-menu";
 
 const appRouter = createBrowserRouter([
@@ -69,6 +70,14 @@ const appRouter = createBrowserRouter([
         element: (
           <AuthGuard>
             <HandleProduct />
+          </AuthGuard>
+        ),
+      },
+      {
+        path: RoutesList.HandleTaxMaster,
+        element: (
+          <AuthGuard>
+            <HandleTaxMaster />
           </AuthGuard>
         ),
       },

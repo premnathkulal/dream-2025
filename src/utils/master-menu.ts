@@ -9,6 +9,7 @@ enum RoutesList {
   HandleCategory = "/handle-category",
   HandleUnit = "/handle-unit",
   HandleProduct = "/handle-product",
+  HandleTaxMaster = "/handle-tax",
 }
 
 interface SubMenuItem {

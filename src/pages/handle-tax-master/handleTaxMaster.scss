@@ -1,0 +1,59 @@
+.gst-info-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  line-height: 2.4rem;
+
+  .right-point-icon {
+    padding: 0 1rem;
+  }
+
+  .gst-label {
+    display: inline-block;
+    width: 5rem;
+    text-align: left;
+  }
+
+  .gst-value-info {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+
+    .gst-raw-value {
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .gst-display-value {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  .gst-display-info {
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    font-weight: 600;
+
+    .gst-display-info-text {
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .gst-display-info-value {
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+    }
+  }
+}

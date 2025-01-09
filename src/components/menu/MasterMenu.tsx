@@ -12,7 +12,7 @@ const MasterMenu = () => {
     false;
   const navigation = useNavigation();
 
-  const handleItemClick = (item: any, parentElementId: string) => {
+  const handleItemClick = (item: MenuItem, parentElementId: string) => {
     const element = document.getElementById(parentElementId);
     if (element) {
       element.classList.remove("dropdown-options");
