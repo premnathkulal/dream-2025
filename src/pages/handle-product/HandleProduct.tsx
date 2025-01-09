@@ -18,7 +18,8 @@ const HandleProduct = () => {
   const [previewImgSrc, setPreviewImgSrc] = useState("");
   const [fileName, setFileName] = useState("");
   const [productUnit, setProductUnit] = useState("");
-  const [isDiscount, setIsDiscount] = useState(false);
+  const [isDiscountAvailable, setIsDiscountAvailable] = useState(false);
+  const [isSchemeAvailable, setIsSchemeAvailable] = useState(false);
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -47,12 +48,7 @@ const HandleProduct = () => {
             type={InputTypes.DropDown}
             label="Company Name"
             value={companyName}
-            options={[
-              {
-                id: "1",
-                title: "Op1",
-              },
-            ]}
+            options={[]}
             isRequired
             setInputValue={setCompanyName}
           />
@@ -156,9 +152,9 @@ const HandleProduct = () => {
           <CheckBox
             id="discount-checkbox"
             name="discount-checkbox"
-            label="Is discount available"
-            value={isDiscount}
-            toggleCheckBox={setIsDiscount}
+            label="Is discount available?"
+            value={isDiscountAvailable}
+            toggleCheckBox={setIsDiscountAvailable}
           />
           <InputBox
             id="discount"
@@ -166,10 +162,18 @@ const HandleProduct = () => {
             type={InputTypes.Text}
             label="Discount"
             value={discount}
+            isDisabled={!isDiscountAvailable}
             isRequired
             showUnit
             unit="%"
             setInputValue={setDiscount}
+          />
+          <CheckBox
+            id="scheme-checkbox"
+            name="scheme-checkbox"
+            label="Is scheme available?"
+            value={isSchemeAvailable}
+            toggleCheckBox={setIsSchemeAvailable}
           />
           <InputBox
             id="scheme"
@@ -177,6 +181,7 @@ const HandleProduct = () => {
             type={InputTypes.Text}
             label="Scheme"
             value={scheme}
+            isDisabled={!isSchemeAvailable}
             isRequired
             setInputValue={setScheme}
           />

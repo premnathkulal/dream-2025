@@ -19,7 +19,6 @@ const CheckBox = (props: CheckBoxInterface) => {
           className="checkbox-input"
           id={id}
           name={name}
-          checked={value}
           onClick={() => toggleCheckBox(!value)}
         />
         <span className="checkbox-custom"></span>

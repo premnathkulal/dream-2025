@@ -31,6 +31,7 @@ interface InputBoxProps {
   isRequired: boolean;
   showUnit?: boolean;
   unit?: string;
+  isDisabled?: boolean;
   isHiddenInput?: boolean;
   options?: DropdownOptions[];
   setInputValue: (value: string) => void;
@@ -50,6 +51,7 @@ const InputBox = (props: InputBoxProps) => {
     options,
     showUnit,
     unit,
+    isDisabled,
     setInputValue,
     handleShowHideInput,
     handleSelectedFile,
@@ -59,7 +61,11 @@ const InputBox = (props: InputBoxProps) => {
     const [selectedValue, setSelectedValue] = useState("");
 
     return (
-      <div className="input-container dropdown-input">
+      <div
+        className={`input-container dropdown-input ${
+          isDisabled ? "disabled" : ""
+        }`}
+      >
         <select
           className="input-field dropdown-select"
           id="customDropdown"
@@ -97,7 +103,7 @@ const InputBox = (props: InputBoxProps) => {
     };
 
     return (
-      <div className="input-container">
+      <div className={`input-container ${isDisabled ? "disabled" : ""}`}>
         <label htmlFor={id} className="file-label">
           <div>{label}</div>
           <FontAwesomeIcon icon={faFileImage} className="file-icon" />
@@ -114,7 +120,7 @@ const InputBox = (props: InputBoxProps) => {
   }
 
   return (
-    <div className="input-container">
+    <div className={`input-container ${isDisabled ? "disabled" : ""}`}>
       <div className="mat-input-wrapper">
         <input
           id={id}

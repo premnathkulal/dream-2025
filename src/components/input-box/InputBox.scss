@@ -161,3 +161,9 @@
   background-color: var.$secondary-color; /* Hover background */
   color: var.$white; /* Hover text color */
 }
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
