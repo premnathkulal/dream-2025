@@ -1,6 +1,7 @@
 import "./HandleProduct.scss";
 import { FormEvent, useState } from "react";
 import InputBox, { InputTypes } from "../../components/input-box/InputBox";
+import CheckBox from "../../components/check-box/ChckBox";
 
 const HandleProduct = () => {
   const [productName, setProductName] = useState("");
@@ -17,6 +18,7 @@ const HandleProduct = () => {
   const [previewImgSrc, setPreviewImgSrc] = useState("");
   const [fileName, setFileName] = useState("");
   const [productUnit, setProductUnit] = useState("");
+  const [isDiscount, setIsDiscount] = useState(false);
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -150,6 +152,13 @@ const HandleProduct = () => {
             value={hsnCode}
             isRequired
             setInputValue={setHsnCode}
+          />
+          <CheckBox
+            id="discount-checkbox"
+            name="discount-checkbox"
+            label="Is discount available"
+            value={isDiscount}
+            toggleCheckBox={setIsDiscount}
           />
           <InputBox
             id="discount"
