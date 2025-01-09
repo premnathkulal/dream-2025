@@ -47,8 +47,8 @@
     white-space: nowrap;
   }
 
-  .menu-category:hover ul {
-    display: block !important;
+  .menu-category:hover .dropdown-options {
+    display: block;
   }
 
   .menu-category li {

@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../store/app-store";
 import { MenuItem, Menu, MenuCategory } from "../../utils/master-menu";
 import useNavigation from "../../hooks/useNavigation";
+import { useEffect } from "react";
 
 const MasterMenu = () => {
   const isDrawerMenuOpen =
@@ -11,9 +12,18 @@ const MasterMenu = () => {
     false;
   const navigation = useNavigation();
 
-  const handleItemClick = (item: MenuItem) => {
+  const handleItemClick = (item: any, parentElementId: string) => {
+    const element = document.getElementById(parentElementId);
+    if (element) {
+      element.classList.remove("dropdown-options");
+      setTimeout(() => {
+        element.classList.add("dropdown-options");
+      }, 100);
+    }
     navigation.handleNavigation(item.path);
   };
+
+  useEffect(() => {}, []);
 
   return (
     <div className="master-menu">
@@ -28,7 +38,7 @@ const MasterMenu = () => {
                 {category.items.length <= 1 && (
                   <div
                     className="dropdown-category"
-                    onClick={() => handleItemClick(category.items[0])}
+                    onClick={() => handleItemClick(category.items[0], "")}
                   >
                     {category.category}
                   </div>
@@ -36,9 +46,17 @@ const MasterMenu = () => {
                 {category.items.length > 1 && (
                   <>
                     <div className="dropdown-category">{category.category}</div>
-                    <ul className="dropdown">
+                    <ul
+                      className="dropdown dropdown-options"
+                      id={`${category.id}`}
+                    >
                       {category.items.map((item: MenuItem) => (
-                        <li key={item.id} onClick={() => handleItemClick(item)}>
+                        <li
+                          key={item.id}
+                          onClick={() =>
+                            handleItemClick(item, `${category.id}`)
+                          }
+                        >
                           {item.name}
                         </li>
                       ))}
@@ -50,7 +68,10 @@ const MasterMenu = () => {
             {category.hasSubCategory && (
               <>
                 <div className="dropdown-category">{category.category}</div>
-                <ul className="dropdown-sub-categories">
+                <ul
+                  className="dropdown-sub-categories dropdown-options"
+                  id={`${category.id}`}
+                >
                   {category.items.map((item: MenuItem) => (
                     <li key={item.id} className="dropdown-sub-category">
                       <div className="sub-category-title">{item.name}</div>
@@ -58,7 +79,9 @@ const MasterMenu = () => {
                         {item.items?.map((item: MenuItem) => (
                           <div
                             key={item.id}
-                            onClick={() => handleItemClick(item)}
+                            onClick={() =>
+                              handleItemClick(item, `${category.id}`)
+                            }
                           >
                             <div className="menu-title">{item.name}</div>
                           </div>
