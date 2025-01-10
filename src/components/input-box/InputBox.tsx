@@ -1,7 +1,7 @@
 import "./InputBox.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
-import { faFileImage } from "@fortawesome/free-solid-svg-icons";
+import { faFileImage, IconDefinition } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
 export enum InputTypes {
@@ -28,9 +28,10 @@ interface InputBoxProps {
   type: InputTypes;
   value: string;
   label: string;
-  isRequired: boolean;
-  showUnit?: boolean;
+  isRequired?: boolean;
+  showUnitIcon?: boolean;
   unit?: string;
+  iconName?: IconDefinition;
   isDisabled?: boolean;
   isHiddenInput?: boolean;
   options?: DropdownOptions[];
@@ -49,7 +50,8 @@ const InputBox = (props: InputBoxProps) => {
     isRequired,
     isHiddenInput,
     options,
-    showUnit,
+    showUnitIcon,
+    iconName,
     unit,
     isDisabled,
     setInputValue,
@@ -156,7 +158,14 @@ const InputBox = (props: InputBoxProps) => {
               )}
             </div>
           )}
-          {showUnit && <div className="unit">{unit}</div>}
+          {showUnitIcon && unit && <div className="unit">{unit}</div>}
+          {showUnitIcon && iconName && (
+            <FontAwesomeIcon
+              icon={iconName}
+              className="eye-icon"
+              onClick={handleShowHideInput}
+            />
+          )}
         </span>
       </div>
     </div>

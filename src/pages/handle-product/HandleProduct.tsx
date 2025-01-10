@@ -2,6 +2,7 @@ import "./HandleProduct.scss";
 import { FormEvent, useState } from "react";
 import InputBox, { InputTypes } from "../../components/input-box/InputBox";
 import CheckBox from "../../components/check-box/ChckBox";
+import { faIndianRupeeSign } from "@fortawesome/free-solid-svg-icons";
 
 const HandleProduct = () => {
   const [productName, setProductName] = useState("");
@@ -78,8 +79,8 @@ const HandleProduct = () => {
             label="Purchase Price"
             value={purchasePrice}
             isRequired
-            showUnit
-            unit="Rs"
+            showUnitIcon
+            iconName={faIndianRupeeSign}
             setInputValue={setPurchasePrice}
           />
           <InputBox
@@ -89,8 +90,8 @@ const HandleProduct = () => {
             label="Sale Price"
             value={salePrice}
             isRequired
-            showUnit
-            unit="Rs"
+            showUnitIcon
+            iconName={faIndianRupeeSign}
             setInputValue={setSalePrice}
           />
           <div className="product-quantity">
@@ -164,7 +165,7 @@ const HandleProduct = () => {
             value={discount}
             isDisabled={!isDiscountAvailable}
             isRequired
-            showUnit
+            showUnitIcon
             unit="%"
             setInputValue={setDiscount}
           />

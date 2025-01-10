@@ -13,6 +13,7 @@ enum RoutesList {
   HandleUnit = "/handle-unit",
   HandleProduct = "/handle-product",
   HandleTaxMaster = "/handle-tax",
+  ViewCompanyBrand = "/view-company-brand",
 }
 
 interface SubMenuItem {

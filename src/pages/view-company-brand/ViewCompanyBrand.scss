@@ -1,0 +1,77 @@
+@use "../../styles/variables" as var;
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+
+  .list-header {
+    display: flex;
+    margin-bottom: 2.8rem;
+
+    h1 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var.$primary-color;
+      margin-bottom: 20px;
+      width: 100%;
+      text-align: left;
+    }
+
+    .search-bar {
+      min-width: 30rem;
+      margin-left: auto;
+    }
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+
+    .card {
+      background: var.$white;
+      border-radius: 8px;
+      overflow: hidden;
+      text-align: center;
+      box-shadow: var.$card-shadow;
+      position: relative;
+
+      img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+
+        @media (max-width: 600px) {
+          height: 120px;
+        }
+      }
+
+      .card-footer {
+        display: flex;
+        align-items: center;
+        padding: 0 1rem;
+        gap: 10px;
+
+        .title {
+          margin: 15px 0;
+          font-size: 1.2em;
+          color: var.$primary-color;
+        }
+
+        .icons {
+          display: flex;
+          margin-left: auto;
+          gap: 1rem;
+          font-size: 1.2rem;
+          cursor: pointer;
+        }
+      }
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(var.$black, 0.2);
+      }
+    }
+  }
+}
