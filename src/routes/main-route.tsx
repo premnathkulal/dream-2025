@@ -74,7 +74,7 @@ const appRouter = createBrowserRouter([
         ),
       },
       {
-        path: RoutesList.HandleTaxMaster,
+        path: `${RoutesList.HandleTaxMaster}/:taxType`,
         element: (
           <AuthGuard>
             <HandleTaxMaster />

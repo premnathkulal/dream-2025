@@ -1,4 +1,7 @@
-// import { Routes } from "../routes/main-route";
+export enum TaxType {
+  GST = "gst",
+  CESS = "cess",
+}
 
 enum RoutesList {
   HOME = "/",
@@ -245,9 +248,17 @@ const Menu = [
         subCategory: MenuItems.TaxMaster,
         name: MenuItems.TaxMaster,
         items: [
-          { id: 261, name: MenuItems.AddGST },
+          {
+            id: 261,
+            name: MenuItems.AddGST,
+            path: `${RoutesList.HandleTaxMaster}/${TaxType.GST}`,
+          },
           { id: 262, name: MenuItems.ViewGST },
-          { id: 263, name: MenuItems.AddCESS },
+          {
+            id: 263,
+            name: MenuItems.AddCESS,
+            path: `${RoutesList.HandleTaxMaster}/${TaxType.CESS}`,
+          },
           { id: 264, name: MenuItems.ViewCESS },
         ],
       },

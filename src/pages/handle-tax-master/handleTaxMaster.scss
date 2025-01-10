@@ -1,4 +1,6 @@
-.gst-info-container {
+@use "../../styles/variables" as var;
+
+.gst-cess-info-container {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -9,25 +11,25 @@
     padding: 0 1rem;
   }
 
-  .gst-label {
+  .gst-cess-label {
     display: inline-block;
     width: 5rem;
     text-align: left;
   }
 
-  .gst-value-info {
+  .gst-cess-value-info {
     width: 100%;
     display: flex;
     align-items: flex-start;
 
-    .gst-raw-value {
+    .gst-cess-raw-value {
       width: 100%;
       display: flex;
       align-items: flex-start;
       flex-direction: column;
     }
 
-    .gst-display-value {
+    .gst-cess-display-value {
       width: 100%;
       display: flex;
       flex-direction: column;
@@ -56,4 +58,9 @@
       flex-direction: column;
     }
   }
+}
+
+.cess-form {
+  border-left: unset !important;
+  border-right: 1px solid var.$light-gray;
 }
