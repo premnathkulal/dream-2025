@@ -83,7 +83,15 @@ const appRouter = createBrowserRouter([
         ),
       },
       {
-        path: `${RoutesList.ViewCompanyBrand}`,
+        path: `${RoutesList.ViewCompanyBrand}/company`,
+        element: (
+          <AuthGuard>
+            <ViewCompanyBrand />
+          </AuthGuard>
+        ),
+      },
+      {
+        path: `${RoutesList.ViewCompanyBrand}/brand`,
         element: (
           <AuthGuard>
             <ViewCompanyBrand />
