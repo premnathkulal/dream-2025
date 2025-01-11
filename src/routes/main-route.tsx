@@ -83,7 +83,7 @@ const appRouter = createBrowserRouter([
         ),
       },
       {
-        path: `${RoutesList.ViewCompanyBrand}/company`,
+        path: `${RoutesList.ViewCompanyBrand}/:pageName`,
         element: (
           <AuthGuard>
             <ViewCompanyBrand />
@@ -91,7 +91,7 @@ const appRouter = createBrowserRouter([
         ),
       },
       {
-        path: `${RoutesList.ViewCompanyBrand}/brand`,
+        path: `${RoutesList.ViewCompanyBrand}/:pageName`,
         element: (
           <AuthGuard>
             <ViewCompanyBrand />

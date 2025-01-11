@@ -2,7 +2,7 @@ import "./InputBox.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-regular-svg-icons";
 import { faFileImage, IconDefinition } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export enum InputTypes {
   Text = "text",
@@ -61,6 +61,10 @@ const InputBox = (props: InputBoxProps) => {
 
   if (type === InputTypes.DropDown) {
     const [selectedValue, setSelectedValue] = useState("");
+
+    useEffect(() => {
+      setInputValue(selectedValue);
+    }, [selectedValue]);
 
     return (
       <div

@@ -66,7 +66,7 @@ const handleTaxMaster = () => {
                 value={inputValue}
                 unit="%"
                 isRequired
-                showUnit
+                showUnitIcon
                 setInputValue={handleGstCalculation}
               />
               <div className="gst-cess-info-container">
@@ -170,7 +170,7 @@ const handleTaxMaster = () => {
                 value={inputCessValue}
                 unit="%"
                 isRequired
-                showUnit
+                showUnitIcon
                 setInputValue={handleCessCalculation}
               />
               <div className="gst-cess-info-container">

@@ -23,17 +23,20 @@
     }
 
     .search-bar {
-      width: 30rem;
+      display: flex;
+      width: 100%;
       margin-left: auto;
+      gap: 1.8rem;
     }
 
     @media (max-width: 900px) {
-      width: 100%;
       flex-direction: column;
       align-items: center;
 
       .search-bar {
         width: 100%;
+        flex-direction: column;
+        // gap: 1.8rem;
       }
     }
   }
@@ -73,6 +76,12 @@
           margin: 15px 0;
           font-size: 1.2em;
           color: var.$primary-color;
+          text-align: left;
+
+          .company-name {
+            font-size: 0.8em;
+            margin-top: 0.4rem;
+          }
         }
 
         .icons {
