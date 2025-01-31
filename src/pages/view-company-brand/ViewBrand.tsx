@@ -303,11 +303,7 @@ const data = [
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./ViewCompanyBrand.scss";
-import {
-  faEdit,
-  faMagnifyingGlass,
-  faTrash,
-} from "@fortawesome/free-solid-svg-icons";
+import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 import InputBox, { InputTypes } from "../../components/input-box/InputBox";
 import { useEffect, useState } from "react";
 import EmptyPage from "../../components/empty-page/EmptyPage";
