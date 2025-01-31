@@ -95,32 +95,32 @@ const handleTaxMaster = () => {
                         className="right-point-icon"
                         icon={faHandPointRight}
                       />
-                      <span className="gst-cess-label">GST</span>@ {gstValue}%
-                      GST
+                      <span className="gst-cess-label">GST</span>@{" "}
+                      {gstValue.toFixed(4)}% GST
                     </p>
                     <p>
                       <FontAwesomeIcon
                         className="right-point-icon"
                         icon={faHandPointRight}
                       />
-                      <span className="gst-cess-label">SGST</span>@ {sGstValue}%
-                      GST
+                      <span className="gst-cess-label">SGST</span>@{" "}
+                      {sGstValue.toFixed(4)}% GST
                     </p>
                     <p>
                       <FontAwesomeIcon
                         className="right-point-icon"
                         icon={faHandPointRight}
                       />
-                      <span className="gst-cess-label">CGST</span>@ {cGstValue}%
-                      GST
+                      <span className="gst-cess-label">CGST</span>@{" "}
+                      {cGstValue.toFixed(4)}% GST
                     </p>
                     <p>
                       <FontAwesomeIcon
                         className="right-point-icon"
                         icon={faHandPointRight}
                       />
-                      <span className="gst-cess-label">IGST</span>@ {iGstValue}%
-                      GST
+                      <span className="gst-cess-label">IGST</span>@{" "}
+                      {iGstValue.toFixed(4)}% GST
                     </p>
                   </div>
                 </div>
@@ -135,14 +135,14 @@ const handleTaxMaster = () => {
                         className="right-point-icon"
                         icon={faHandPointRight}
                       />
-                      PURCHASE @ {gstValue}% GST
+                      PURCHASE @ {gstValue.toFixed(4)}% GST
                     </p>
                     <p>
                       <FontAwesomeIcon
                         className="right-point-icon"
                         icon={faHandPointRight}
                       />
-                      SALE @ {gstValue}% GST
+                      SALE @ {gstValue.toFixed(4)}% GST
                     </p>
                   </div>
                 </div>
@@ -187,8 +187,8 @@ const handleTaxMaster = () => {
                         className="right-point-icon"
                         icon={faHandPointRight}
                       />
-                      <span className="gst-cess-label">CESS</span>@ {cessValue}%
-                      GST
+                      <span className="gst-cess-label">CESS</span>@{" "}
+                      {cessValue.toFixed(4)}% GST
                     </p>
                   </div>
                 </div>
