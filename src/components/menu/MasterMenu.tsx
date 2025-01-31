@@ -2,7 +2,7 @@ import "./MasterMenu.scss";
 import DrawerMenu from "./DrawerMenu";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/app-store";
-import { MenuItem, Menu, MenuCategory } from "../../utils/master-menu";
+import { MenuItem, Menu } from "../../utils/master-menu";
 import useNavigation from "../../hooks/useNavigation";
 import { useEffect } from "react";
 
@@ -31,7 +31,7 @@ const MasterMenu = () => {
         {isDrawerMenuOpen && <DrawerMenu />}
       </div>
       <div className="horizontal-menu desktop">
-        {Menu.map((category: MenuCategory) => (
+        {Menu.map((category: any) => (
           <div key={category.id} className="menu-category">
             {!category.hasSubCategory && (
               <>
