@@ -1,7 +1,7 @@
 {
   "hosting": {
     "site": "dream-2025",
-    "public": "public",
+    "public": "dist",
     "ignore": [
       "firebase.json",
       "**/.*",
