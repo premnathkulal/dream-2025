@@ -173,6 +173,29 @@ const Menu = [
     ],
   },
   {
+    id: 4,
+    category: MenuCategories.Sales,
+    hasSubCategory: false,
+    items: [
+      { id: 41, name: MenuItems.BillEntry },
+      { id: 42, name: MenuItems.BillUpdatePrint },
+      { id: 43, name: MenuItems.Invoice },
+      { id: 44, name: MenuItems.BillGenerate },
+      { id: 45, name: MenuItems.SalesmanOrderGenerate },
+    ],
+  },
+
+  {
+    id: 5,
+    category: MenuCategories.SalesReturn,
+    hasSubCategory: false,
+    items: [
+      { id: 51, name: MenuItems.SalesReturnEntry },
+      { id: 52, name: MenuItems.SalesReturnUpdate },
+      { id: 53, name: MenuItems.DamageReturn },
+    ],
+  },
+  {
     id: 2,
     category: MenuCategories.Master,
     hasSubCategory: true,
@@ -283,28 +306,6 @@ const Menu = [
       { id: 32, name: MenuItems.StockBrowser },
       { id: 33, name: MenuItems.StockTransferBrowser },
       { id: 34, name: MenuItems.StockTransferEntry },
-    ],
-  },
-  {
-    id: 4,
-    category: MenuCategories.Sales,
-    hasSubCategory: false,
-    items: [
-      { id: 41, name: MenuItems.BillEntry },
-      { id: 42, name: MenuItems.BillUpdatePrint },
-      { id: 43, name: MenuItems.Invoice },
-      { id: 44, name: MenuItems.BillGenerate },
-      { id: 45, name: MenuItems.SalesmanOrderGenerate },
-    ],
-  },
-  {
-    id: 5,
-    category: MenuCategories.SalesReturn,
-    hasSubCategory: false,
-    items: [
-      { id: 51, name: MenuItems.SalesReturnEntry },
-      { id: 52, name: MenuItems.SalesReturnUpdate },
-      { id: 53, name: MenuItems.DamageReturn },
     ],
   },
   {
