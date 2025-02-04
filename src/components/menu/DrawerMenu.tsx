@@ -1,5 +1,5 @@
 import "./DrawerMenu.scss";
-import { MenuItem, Menu } from "../../utils/master-menu";
+import { MenuItem, Menu, MenuCategory } from "../../utils/master-menu";
 import useNavigation from "../../hooks/useNavigation";
 import { useDispatch } from "react-redux";
 import { toggleDrawerMenu } from "../../store/slices/ui-controls";
@@ -15,7 +15,7 @@ const DrawerMenu = () => {
 
   return (
     <div className="drawer-menu">
-      {Menu.map((category: any) => (
+      {Menu.map((category: MenuCategory) => (
         <div key={category.id} className="drawer-menu-category">
           {!category.hasSubCategory && (
             <>

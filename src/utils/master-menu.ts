@@ -19,13 +19,13 @@ enum RoutesList {
 interface SubMenuItem {
   id: number | string;
   name: string;
-  path?: RoutesList;
+  path?: string;
 }
 
 interface MenuItem {
   id: number | string;
   name: string;
-  path?: RoutesList;
+  path?: string;
   subCategory?: string;
   items?: SubMenuItem[];
 }
@@ -33,7 +33,7 @@ interface MenuItem {
 interface MenuCategory {
   id: number | string;
   category: string;
-  path?: RoutesList;
+  path?: string;
   hasSubCategory: boolean;
   items: MenuItem[];
 }
