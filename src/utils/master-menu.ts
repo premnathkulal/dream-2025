@@ -14,6 +14,8 @@ enum RoutesList {
   HandleProduct = "/handle-product",
   HandleTaxMaster = "/handle-tax",
   ViewCompanyBrand = "/view-company-brand",
+  CreateBeat = "/create-beat",
+  ViewBeat = "/view-beat",
 }
 
 interface SubMenuItem {
@@ -263,8 +265,8 @@ const Menu = [
         subCategory: MenuItems.Beat,
         name: MenuItems.Beat,
         items: [
-          { id: 251, name: MenuItems.BeatCreate },
-          { id: 252, name: MenuItems.BeatUpdate },
+          { id: 251, name: MenuItems.BeatCreate, path: RoutesList.CreateBeat },
+          { id: 252, name: MenuItems.BeatUpdate, path: RoutesList.ViewBeat },
         ],
       },
       {

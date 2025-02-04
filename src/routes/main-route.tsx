@@ -12,6 +12,7 @@ import HandleProduct from "../pages/handle-product/HandleProduct";
 import HandleTaxMaster from "../pages/handle-tax-master/handleTaxMaster";
 import { RoutesList } from "../utils/master-menu";
 import ViewCompanyBrand from "../pages/view-company-brand/ViewCompanyBrand";
+import CreateBeat from "../pages/handle-beat/CreateBeat";
 
 const appRouter = createBrowserRouter([
   {
@@ -95,6 +96,14 @@ const appRouter = createBrowserRouter([
         element: (
           <AuthGuard>
             <ViewCompanyBrand />
+          </AuthGuard>
+        ),
+      },
+      {
+        path: RoutesList.CreateBeat,
+        element: (
+          <AuthGuard>
+            <CreateBeat />
           </AuthGuard>
         ),
       },
