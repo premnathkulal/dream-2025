@@ -1,0 +1,52 @@
+.view-beat {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .list-header {
+    width: 100%;
+    display: flex;
+
+    .page-title {
+      font-size: 1.8rem;
+      margin: 1rem 0;
+    }
+
+    .search-bar {
+      margin-left: auto;
+    }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+
+    th:first-child,
+    td:first-child {
+      text-align: left;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tr:hover {
+      background-color: #f2f2f2;
+    }
+  }
+}
