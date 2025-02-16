@@ -16,6 +16,7 @@ enum RoutesList {
   ViewCompanyBrand = "/view-company-brand",
   CreateBeat = "/create-beat",
   ViewBeat = "/view-beat",
+  GoodsReceptEntry = "/goods-receipt-entry",
 }
 
 interface SubMenuItem {
@@ -169,7 +170,11 @@ const Menu = [
     category: MenuCategories.Purchase,
     hasSubCategory: false,
     items: [
-      { id: 11, name: MenuItems.GoodsReceiptEntry },
+      {
+        id: 11,
+        name: MenuItems.GoodsReceiptEntry,
+        path: RoutesList.GoodsReceptEntry,
+      },
       { id: 12, name: MenuItems.PurchaseInvoiceView },
       { id: 13, name: MenuItems.GoodsShortageReturns },
     ],

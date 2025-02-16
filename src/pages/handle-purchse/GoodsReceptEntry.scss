@@ -1,0 +1,104 @@
+@use "../../styles/variables" as var;
+
+.goods-recept-entry-form {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 2rem;
+
+  .form-title {
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    width: 100%;
+    text-align: left;
+  }
+
+  .btn {
+    margin-top: 1rem;
+    width: 35%;
+    align-self: center;
+  }
+
+  .form-container {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    .form-items {
+      flex: 1;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-direction: row;
+      gap: 1.8rem;
+      padding: 1rem;
+      width: 100%;
+      flex-wrap: wrap;
+
+      .input-container,
+      .gst-info {
+        width: 100%;
+        flex: 1;
+      }
+
+      .gst-info {
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+
+      .product-quantity {
+        width: 100%;
+        display: flex;
+        gap: 1rem;
+      }
+    }
+
+    .table-area {
+      padding: 1rem;
+      max-width: 100%;
+
+      .table-container {
+        margin-top: 1.2rem;
+        overflow-x: scroll;
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    margin: 1rem !important;
+    margin-bottom: 2rem !important;
+
+    .form-title {
+      padding: 1rem 0 !important;
+    }
+
+    .btn {
+      width: 100%;
+    }
+
+    .form-container {
+      width: 100%;
+
+      .form-items {
+        padding: unset;
+        padding-bottom: 2rem;
+        width: 100%;
+        border-right: unset !important;
+        flex-direction: column;
+
+        .input-container {
+          width: 100%;
+          flex: 1;
+        }
+      }
+    }
+  }
+}

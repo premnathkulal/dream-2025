@@ -14,6 +14,7 @@ import { RoutesList } from "../utils/master-menu";
 import ViewCompanyBrand from "../pages/view-company-brand/ViewCompanyBrand";
 import CreateBeat from "../pages/handle-beat/CreateBeat";
 import ViewBeat from "../pages/handle-beat/ViewBeat";
+import GoodsReceptEntry from "../pages/handle-purchse/GoodsReceptEntry";
 
 const appRouter = createBrowserRouter([
   {
@@ -113,6 +114,14 @@ const appRouter = createBrowserRouter([
         element: (
           <AuthGuard>
             <ViewBeat />
+          </AuthGuard>
+        ),
+      },
+      {
+        path: RoutesList.GoodsReceptEntry,
+        element: (
+          <AuthGuard>
+            <GoodsReceptEntry />
           </AuthGuard>
         ),
       },
