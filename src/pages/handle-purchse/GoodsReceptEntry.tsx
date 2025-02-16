@@ -1,8 +1,6 @@
 import "./GoodsReceptEntry.scss";
 import { FormEvent, useState } from "react";
 import InputBox, { InputTypes } from "../../components/input-box/InputBox";
-import CheckBox from "../../components/check-box/ChckBox";
-import { faIndianRupeeSign } from "@fortawesome/free-solid-svg-icons";
 import GoodsReceptEntryTable from "./GoodsReceptEntryTable";
 
 const GoodsReceptEntry = () => {
@@ -13,7 +11,7 @@ const GoodsReceptEntry = () => {
   const [posNumber, setPosNumber] = useState("");
   const [vehicleNumber, setVehicleNumber] = useState("");
   const [partyName, setPartyName] = useState("");
-  const [gstNumber, setGstNumber] = useState("");
+  const [gstNumber] = useState("");
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
