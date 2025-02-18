@@ -15,6 +15,7 @@ import ViewCompanyBrand from "../pages/view-company-brand/ViewCompanyBrand";
 import CreateBeat from "../pages/handle-beat/CreateBeat";
 import ViewBeat from "../pages/handle-beat/ViewBeat";
 import GoodsReceptEntry from "../pages/handle-purchse/GoodsReceptEntry";
+import CreateSupplier from "../pages/handle-supplier/CreateSupplier";
 
 const appRouter = createBrowserRouter([
   {
@@ -122,6 +123,14 @@ const appRouter = createBrowserRouter([
         element: (
           <AuthGuard>
             <GoodsReceptEntry />
+          </AuthGuard>
+        ),
+      },
+      {
+        path: RoutesList.CreateSupplier,
+        element: (
+          <AuthGuard>
+            <CreateSupplier />
           </AuthGuard>
         ),
       },

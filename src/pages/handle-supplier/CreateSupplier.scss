@@ -1,0 +1,8 @@
+@use "../../styles/variables" as var;
+
+.simple-create-form {
+  .form-container {
+    border-left: unset;
+    border-right: 1px solid var.$light-gray;
+  }
+}

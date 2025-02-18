@@ -17,6 +17,7 @@ enum RoutesList {
   CreateBeat = "/create-beat",
   ViewBeat = "/view-beat",
   GoodsReceptEntry = "/goods-receipt-entry",
+  CreateSupplier = "/create-supplier",
 }
 
 interface SubMenuItem {
@@ -254,7 +255,13 @@ const Menu = [
         id: 23,
         subCategory: MenuItems.Supplier,
         name: MenuItems.Supplier,
-        items: [{ id: 231, name: MenuItems.CreateSupplier }],
+        items: [
+          {
+            id: 231,
+            name: MenuItems.CreateSupplier,
+            path: RoutesList.CreateSupplier,
+          },
+        ],
       },
       {
         id: 24,
