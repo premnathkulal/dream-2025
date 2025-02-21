@@ -9,11 +9,11 @@ const Footer = () => {
       <div className="footer-message">
         Made with <FontAwesomeIcon icon={faHeart} className="heart" /> and{" "}
         <FontAwesomeIcon icon={faTools} className="tools" />
-        &nbsp;&nbsp;by Shenoy Enterprises
+        &nbsp;&nbsp;by Hare Krishna DevWorks
       </div>
       <div className="footer-text">
-        All Rights Reserved <FontAwesomeIcon icon={faCopyright} /> Shenoy
-        Enterprises
+        All Rights Reserved <FontAwesomeIcon icon={faCopyright} /> Hare Krishna
+        DevWorks
       </div>
     </div>
   );
