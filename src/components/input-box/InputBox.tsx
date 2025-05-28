@@ -37,7 +37,7 @@ interface InputBoxProps {
   options?: DropdownOptions[];
   setInputValue: (value: string) => void;
   handleShowHideInput?: () => void;
-  handleSelectedFile?: (e: File) => void;
+  handleSelectedFile?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 const InputBox = (props: InputBoxProps) => {
@@ -99,15 +99,6 @@ const InputBox = (props: InputBoxProps) => {
   }
 
   if (type === InputTypes.File) {
-    const displayFile = (event: React.ChangeEvent<HTMLInputElement>): void => {
-      if (event.target.files && event.target.files.length > 0) {
-        const file = event.target.files[0];
-        if (handleSelectedFile) {
-          handleSelectedFile(file);
-        }
-      }
-    };
-
     return (
       <div className={`input-container ${isDisabled ? "disabled" : ""}`}>
         <label htmlFor={id} className="file-label">
@@ -119,7 +110,7 @@ const InputBox = (props: InputBoxProps) => {
           type={type}
           className="file-input"
           accept="image/*"
-          onChange={displayFile}
+          onChange={handleSelectedFile}
         />
       </div>
     );

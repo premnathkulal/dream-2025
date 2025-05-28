@@ -3,26 +3,44 @@ import { FormEvent, useState } from "react";
 import InputBox, { InputTypes } from "../../components/input-box/InputBox";
 import Lottie from "lottie-react";
 import animationData from "../../assets/lottie/team-anim-1.json";
+import { registerCompany } from "../../services/companyService";
+import { Company } from "../../types/company";
 
 const HandleCompany = () => {
   const [companyName, setCompanyName] = useState("");
   const [previewImgSrc, setPreviewImgSrc] = useState("");
   const [fileName, setFileName] = useState("");
+  const [logo, setLogo] = useState<File | null>(null);
+  const [createdCompany, setCreatedCompany] = useState<Company | null>(null);
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    console.log("company name:", companyName);
+    if (!logo) return alert("Please select a logo");
+
+    try {
+      const company = await registerCompany(companyName, logo);
+      setCreatedCompany(company);
+    } catch (err) {
+      console.error(err);
+      alert("Error creating company");
+    }
   };
 
-  function handleSelectedFile(file: File) {
+  function handleSelectedFile(e: React.ChangeEvent<HTMLInputElement>) {
+    const selectedFile = e.target.files?.[0];
+    if (!selectedFile) return;
+
     const reader = new FileReader();
-    reader.onload = function (e) {
-      if (e.target) {
-        setPreviewImgSrc(e.target.result as string);
-        setFileName(file.name);
+
+    reader.onload = function (event) {
+      if (event.target?.result) {
+        setPreviewImgSrc(event.target.result as string);
       }
     };
-    reader.readAsDataURL(file);
+
+    setFileName(selectedFile.name);
+    setLogo(selectedFile);
+    reader.readAsDataURL(selectedFile);
   }
 
   return (
