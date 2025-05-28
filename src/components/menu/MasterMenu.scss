@@ -64,13 +64,17 @@
   .dropdown-sub-categories {
     column-count: 4;
 
-    @media (max-width: 1200px) {
+    @media (min-width: 1200px) {
       column-count: 3;
     }
 
-    @media (max-width: 992px) {
+    @media (max-width: 1200px) {
       column-count: 2;
     }
+
+    // @media (max-width: 992px) {
+    //   column-count: 2;
+    // }
 
     @media (max-width: 768px) {
       column-count: 1;

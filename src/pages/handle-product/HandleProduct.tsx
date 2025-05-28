@@ -21,6 +21,7 @@ const HandleProduct = () => {
   const [productUnit, setProductUnit] = useState("");
   const [isDiscountAvailable, setIsDiscountAvailable] = useState(false);
   const [isSchemeAvailable, setIsSchemeAvailable] = useState(false);
+  const [categoryName, setCategoryName] = useState("");
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -62,6 +63,16 @@ const HandleProduct = () => {
             options={[]}
             isRequired
             setInputValue={setBrandName}
+          />
+          <InputBox
+            id="category-name"
+            name="category-name"
+            type={InputTypes.DropDown}
+            label="Category Name"
+            value={categoryName}
+            options={[]}
+            isRequired
+            setInputValue={setCategoryName}
           />
           <InputBox
             id="product-name"
