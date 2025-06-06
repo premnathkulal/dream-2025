@@ -20,9 +20,10 @@ const HandleCompany = () => {
     try {
       const company = await registerCompany(companyName, logo);
       setCreatedCompany(company);
-    } catch (err) {
-      console.error(err);
-      alert("Error creating company");
+    } catch (err: Error | unknown) {
+      if (err instanceof Error) {
+        console.error("Error creating company:", err.message);
+      }
     }
   };
 

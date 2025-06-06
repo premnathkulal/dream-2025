@@ -301,8 +301,8 @@ const data = [
   },
 ];
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./ViewCompanyBrand.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
 import InputBox, { InputTypes } from "../../components/input-box/InputBox";
 import { useEffect, useState } from "react";

@@ -218,13 +218,21 @@ const Menu = [
             name: MenuItems.CreateCompany,
             path: RoutesList.HandleCompany,
           },
-          { id: 212, name: MenuItems.ViewCompany },
+          {
+            id: 212,
+            name: MenuItems.ViewCompany,
+            path: `${RoutesList.ViewCompanyBrand}/company`,
+          },
           {
             id: 213,
             name: MenuItems.CreateBrand,
             path: RoutesList.HandleBrand,
           },
-          { id: 214, name: MenuItems.ViewBrand },
+          {
+            id: 214,
+            name: MenuItems.ViewBrand,
+            path: `${RoutesList.ViewCompanyBrand}/brand`,
+          },
           {
             id: 215,
             name: MenuItems.CreateCategory,
